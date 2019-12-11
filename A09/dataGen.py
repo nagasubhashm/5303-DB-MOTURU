@@ -32,7 +32,7 @@ num = int(args.num[0])
 def csvFile():
     ls = gen.username(num)
     count = 1
-    with open('data.csv', 'w+', newline='') as file:
+    with open('users.csv', 'w+', newline='') as file:
         write = csv.writer(file)
         write.writerow(['user_id', 'email', 'username', 'first_name',
             'last_name', 'password', 'create_time', 'last_update'])
@@ -90,8 +90,6 @@ def jsonFile():
         # indent=4 gives the file pretty formatting but uses many more lines
 
 
-if filetype == 'csv': 
+if filetype == 'data11.csv': 
     csvFile()
-elif filetype == 'json':
-     jsonFile()
 
