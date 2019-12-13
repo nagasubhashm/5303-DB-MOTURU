@@ -1,0 +1,3 @@
+select a1.distinct(country),a2.distinct(country) from A06_country a1, A06_country a2
+
+#needed to make path b/w two lists
