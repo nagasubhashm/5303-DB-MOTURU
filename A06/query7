@@ -5,4 +5,4 @@ FROM A06_routes a,A06_airport b,A06_airport b1
 WHERE b.IATA=a.Sourceairport and b1.IATA = a.Destinationairport
 
 
-Output : 247800905.07680097
+Output : 247800905.07680097 seconds for miles
