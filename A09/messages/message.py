@@ -37,12 +37,11 @@ for i in range(100000):
         'messageID' : count,
         'message' + str(i): message
         })
+        count+=1
 
-
+#need date for time stamps to create time
 # Write the list to a json file
 messages = os.path.dirname(__file__) + '/messages.json'
 with io.open(messages, 'w+', encoding='utf-8') as f:
-    json.dump(data, f)# , indent=4) 
-        # indent=4 gives the file pretty formatting but uses many more lines
-
+    json.dump(data, f , indent=4) 
 input()
