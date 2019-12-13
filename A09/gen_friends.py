@@ -1,14 +1,15 @@
-
-#!/usr/bin/python3
-
 from random import randint
 from random import shuffle
 from datetime import datetime
 import pprint
 import sys
 
+
 friends_dict = {}
 
+#should generate friends count of users
+#friends 1-250k
+#ranges (based on age)
 def gen_friend_count(friends,ranges):
     max_friends_list = []
     for i in range(int(friends/len(ranges))):
@@ -20,7 +21,8 @@ def gen_friend_count(friends,ranges):
     for i in range(friends):
         friends_dict[i] = {"allowed":max_friends_list[i],"friends":[],"max":max_friends_list[i]}
 
-
+#should be able to see relation between two users
+#limit the friendships
 def print_data(f1,f2):
     print("f1:",friends_dict[f1]['friends'])
     print("f2:",friends_dict[f2]['friends'])
@@ -29,7 +31,8 @@ def print_data(f1,f2):
     m1 = friends_dict[f1]['max']
     m2 = friends_dict[f2]['max']
     print(f"len 1:{l1} < max1:{m1}  ,len 1:{l2} < max1:{m2}")
-
+    
+#adding based on the number of friendships
 def add_friendship(f1,f2):
     #print_data(f1,f2)
     t1 = f2 not in friends_dict[f1]['friends'] 
@@ -38,6 +41,7 @@ def add_friendship(f1,f2):
     t4 = len(friends_dict[f2]['friends']) <  friends_dict[f2]['max']
     return (t1 and t2 and t3 and t4)
 
+#
 def connect_friends():
     max_friends = len(friends_dict)
 
